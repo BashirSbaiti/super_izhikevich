@@ -46,6 +46,7 @@ import matplotlib.pyplot as plt
 
 class izhCell():
     def __init__(self,stimVal):
+        """initializes the neuron's and the simulation's parameters"""
         # Define Neuron Parameters
         self.celltype='Generic Izhikevich' # Regular spiking
         self.C=100
@@ -73,9 +74,11 @@ class izhCell():
         self.u=0*self.v
         
     def __repr__(self):
+        """returns string representation of the neuron"""
         return self.celltype +' Cell with StimVal=' + str(self.stimVal)
 
-    def simulate(self):    
+    def simulate(self):
+        """runs the simulation of the neuron of the given parameters for a given amount of timesteps"""
         # Run the simulation
         print("vpeak = ", self.vpeak)
         for i in range(1,self.n-1):
@@ -88,6 +91,7 @@ class izhCell():
                     self.u[0,i+1]=self.u[0,i+1]+self.d 
                     
 def plotMyData(somecell, upLim = 1000):
+    """plots the neuron's data after the simulation"""
     tau = somecell.tau
     n = somecell.n
     v = somecell.v
@@ -102,6 +106,7 @@ def plotMyData(somecell, upLim = 1000):
     plt.show()
 
 def createCell():
+    """creates a cell, runs the simulation, and plots the data"""
     myCell = izhCell(stimVal=4000)        
     myCell.simulate()
     plotMyData(myCell)

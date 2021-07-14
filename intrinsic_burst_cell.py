@@ -2,6 +2,7 @@ import izhikevich_cells as izh
 
 class ibCell(izh.izhCell):
     def __init__(self, stimVal):
+        """initializes the neuron's and the simulation's parameters"""
         super().__init__(stimVal)
         self.celltype = "Intrinsically Bursting"
         self.C = 150

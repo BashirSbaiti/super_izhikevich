@@ -13,7 +13,6 @@ class ibCell(izh.izhCell):
         self.c=-56
         self.d=130
         self.vpeak=50
-        self.stimVal = stimVal
 
 myCell = ibCell(stimVal=4000)
 myCell.simulate()

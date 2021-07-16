@@ -15,7 +15,7 @@ class ibCell(izh.izhCell):
         self.d=130
         self.vpeak=50
 
-myCell = ibCell(stimVal=4000)
+myCell = ibCell(stimVal=500)
 myCell.simulate()
 if __name__=='__main__':
     izh.plotMyData(myCell)

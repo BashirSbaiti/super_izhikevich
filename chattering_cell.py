@@ -12,7 +12,7 @@ class cCell(izh.izhCell):
         self.d=150
         self.vpeak=25
 
-myCell = cCell(stimVal=4000)
+myCell = cCell(stimVal=200)
 myCell.simulate()
 if __name__=='__main__':
     izh.plotMyData(myCell)
